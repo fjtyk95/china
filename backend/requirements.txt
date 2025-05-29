@@ -1,0 +1,9 @@
+fastapi>=0.110
+uvicorn>=0.29
+sqlalchemy>=2.0
+psycopg2-binary>=2.9
+boto3>=1.34
+python-multipart>=0.0.6
+PyJWT>=2.8
+moto[s3]>=5.0
+requests>=2.31

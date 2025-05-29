@@ -1,8 +1,10 @@
-import { FlatCompat } from '@eslint/eslintrc';
+const { FlatCompat } = require('@eslint/eslintrc');
 
-const compat = new FlatCompat({ baseDirectory: __dirname });
-export default compat.config({
-  ignores: ['node_modules', '.next'],
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+module.exports = compat.config({
   extends: [
     'airbnb',
     'airbnb/hooks',

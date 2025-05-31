@@ -1,22 +1,20 @@
 # Cross Border Trade Lens
 
-Cross Border Trade Lens is a simple Next.js 14 boilerplate set up with TypeScript, Tailwind CSS and a few useful developer tools like ESLint, Prettier and Husky.
+このリポジトリは Next.js 14 を用いたフロントエンドのボイラープレートです。
+TypeScript、Tailwind CSS、ESLint、Prettier、Husky などが事前に設定されています。
 
-## Prerequisites
+## 前提条件 / Prerequisites
+- Node.js 18 以上 (推奨 20 以上)
+- pnpm 8 以上
 
-- **Node.js** v20 or newer
-- **pnpm**
-
-## Setup
-
+## セットアップ / Setup
 1. `cd frontend`
-2. Run `pnpm install` to install dependencies. The `prepare` script will automatically run `husky install` so Git hooks are ready.
-3. Start the development server with `pnpm dev`.
+2. `pnpm install` を実行すると `husky install` が自動で走ります
+3. `pnpm dev` で開発サーバーを起動
 
-## Scripts
+## スクリプト / Scripts
+- `pnpm lint` – ESLint によるコードチェック
+- `pnpm format` – Prettier で整形
+- `pnpm run check` – lint を実行 (CI や pre-commit 用)
 
-- `pnpm lint` – run ESLint
-- `pnpm format` – format with Prettier
-- `pnpm run check` – run the linter (used for CI or pre-commit)
-
-Husky's pre-commit hook runs `pnpm lint` and `pnpm format` before each commit.
+Husky の pre-commit フックによってコミット前に `pnpm lint` と `pnpm format` が実行されます。

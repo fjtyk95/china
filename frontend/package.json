@@ -2,7 +2,7 @@
 6    "dev": "next dev",
 7    "build": "next build",
 8    "start": "next start",
-9    "lint": "eslint . --ext js,ts,jsx,tsx",
+9    "lint": "eslint --config ./eslint.config.js . --ext js,ts,jsx,tsx",
 10   "format": "prettier --write .",
 11   "check": "pnpm lint",
 12   "prepare": "husky install"

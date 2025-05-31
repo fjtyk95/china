@@ -1,0 +1,4 @@
+fastapi
+uvicorn
+celery>=5,<6
+redis>=4,<5

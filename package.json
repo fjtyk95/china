@@ -1,0 +1,10 @@
+{
+  "name": "cross-border-trade-lens-root",
+  "private": true,
+  "scripts": {
+    "validate:openapi": "openapi-cli validate contracts/openapi.yaml"
+  },
+  "devDependencies": {
+    "@redocly/openapi-cli": "^1.0.0"
+  }
+}

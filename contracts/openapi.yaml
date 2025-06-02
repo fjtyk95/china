@@ -1,0 +1,99 @@
+openapi: 3.1.0
+info:
+  title: Cross Border Trade Lens API
+  version: '1.0.0'
+  description: API definitions for job processing and billing webhooks.
+servers:
+  - url: https://api.example.com
+paths:
+  /v1/jobs:
+    post:
+      summary: Create a new job
+      description: |
+        Accepts a PDF upload and creates a job for processing. Requires JWT authentication.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+              required:
+                - file
+      responses:
+        '200':
+          description: Job created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    format: uuid
+                  status:
+                    type: string
+                    enum: [queued]
+                required:
+                  - job_id
+                  - status
+  /billing/webhook:
+    post:
+      summary: Stripe webhook endpoint
+      description: Handles Stripe subscription events.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Webhook processed
+  /v1/stripe/session:
+    post:
+      summary: Create Stripe Checkout session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Session created
+components:
+  schemas:
+    Job:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        user_id:
+          type: string
+        s3_key:
+          type: string
+        status:
+          type: string
+      required:
+        - id
+        - user_id
+        - s3_key
+        - status
+    Subscription:
+      type: object
+      properties:
+        id:
+          type: string
+        customer_id:
+          type: string
+        status:
+          type: string
+      required:
+        - id
+        - customer_id
+        - status

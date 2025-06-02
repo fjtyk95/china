@@ -1,0 +1,10 @@
+aws_region     = "ap-northeast-1"
+bucket_name    = "cbl-prod-bucket"
+db_name        = "cbl_prod"
+db_username    = "produser"
+db_password    = "prodpass123"
+repository_name = "cbl-prod-repo"
+cluster_name    = "cbl-prod-cluster"
+service_name    = "cbl-prod-service"
+container_port  = 80
+desired_count   = 2

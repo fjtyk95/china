@@ -1,0 +1,10 @@
+aws_region     = "ap-northeast-1"
+bucket_name    = "cbl-dev-bucket"
+db_name        = "cbl_dev"
+db_username    = "devuser"
+db_password    = "devpass123"
+repository_name = "cbl-dev-repo"
+cluster_name    = "cbl-dev-cluster"
+service_name    = "cbl-dev-service"
+container_port  = 80
+desired_count   = 1

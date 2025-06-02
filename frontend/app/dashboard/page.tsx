@@ -1,4 +1,5 @@
 import SubscribeButton from '../../src/components/SubscribeButton';
+import JobStatusList from '../../src/components/JobStatusList';
 
 export default function DashboardPage() {
   const currentPlan = 'Free';
@@ -8,6 +9,7 @@ export default function DashboardPage() {
       <h1 className="text-2xl font-bold">Dashboard</h1>
       <p>Current plan: {currentPlan}</p>
       <SubscribeButton />
+      <JobStatusList userId="demo-user" />
     </main>
   );
 }

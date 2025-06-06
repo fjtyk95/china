@@ -35,5 +35,6 @@ Terraform では S3 バケットや RDS(PostgreSQL) を作成します。
 - `terraform init` – Terraform の初期化
 - `terraform plan` – 適用前の変更内容を確認
 - `terraform apply` – 変更を適用
+- `npm run validate:openapi` – OpenAPI 仕様を検証
 
 Husky の pre-commit フックによってコミット前に `pnpm lint` と `pnpm format` が実行されます。
